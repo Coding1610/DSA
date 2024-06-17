@@ -1,74 +1,60 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
-    int partition( int arr[], int s, int e) {
+int partition( vector<int> &arr , int left , int right ){
 
-        int pivot = arr[s];
+    int count = 0;
+    int pivot = arr[left];
 
-        int cnt = 0;
-        for(int i = s+1; i<=e; i++) {
-            if(arr[i] <= pivot) {
-                cnt++;
-            }
+    for( int i = left+1 ; i <= right ; i++ ){
+      if(arr[i] <= pivot ){
+        count++;
+      }
+    }
+
+    int pivotIndex = count+left;
+    swap( arr[pivotIndex] , arr[left] );
+
+    int i = left;
+    int j = right;
+
+    while( i < pivotIndex && j > pivotIndex && i < j ){
+
+        while( arr[i] <= pivot && i < pivotIndex ){
+            i++;
         }
 
-    //place pivot at right position
-
-        int pivotIndex = s + cnt;
-        swap(arr[pivotIndex], arr[s]);
-
-    //left and right wala part smbhal lete h 
-        int i = s, j = e;
-
-        while(i < pivotIndex && j > pivotIndex) {
-
-            while(arr[i] <= pivot) 
-            {
-                i++;
-            }
-
-            while(arr[j] > pivot) {
-                j--;
-            }
-
-            if(i < pivotIndex && j > pivotIndex) {
-                swap(arr[i++], arr[j--]);
-            }
-
+        while( arr[j] > pivot && j > pivotIndex ){
+            j--;
         }
 
-        return pivotIndex;
+        if( i < pivotIndex && j > pivotIndex ){
+            swap( arr[i] , arr[j] );
+        }
 
     }
 
-    void quickSort(int arr[], int s, int e) {
+    return pivotIndex;
 
-    //base case
-        if(s >= e) 
-            return ;
+}
 
-    //partitioon karenfe
-        int p = partition(arr, s, e);
+void solve( vector<int> &arr , int left , int right ){
 
-    //left part sort karo
-        quickSort(arr, s, p-1);
-
-    //right wala part sort karo
-        quickSort(arr, p+1, e);
-
+    if(left >= right){
+        return;
     }
 
-    int main() {
+    int p = partition( arr , left , right );
+    
+    solve( arr , left , p-1 );
+    solve( arr , p+1 , right );
 
-        int arr[10] = {2,4,1,6,9 ,9,9,9,9,9};
-        int n = 10;
+}
+ 
 
-        quickSort(arr, 0, n-1);
+vector<int> quickSort(vector<int> arr){
 
-        for(int i=0; i<n; i++) 
-        {
-            cout << arr[i] << " ";
-        }   cout << endl;
+    solve( arr , 0 , arr.size()-1 );
+    return arr;
 
-        return 0;
-    }
+}

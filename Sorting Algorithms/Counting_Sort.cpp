@@ -1,4 +1,4 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 void Counting_Sort( int arrA[] , int n , int k ){
@@ -26,6 +26,7 @@ void Counting_Sort( int arrA[] , int n , int k ){
     for( int i = 1 ; i < n ; i++ ){
         cout << arrB[i] << " ";
     }
+    
     cout << endl;
 
 }
