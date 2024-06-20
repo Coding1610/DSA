@@ -130,16 +130,18 @@ int main(){
 
     // Head
     Node* Head = newNode;
+    cout << "Head : " << Head -> data << endl;
 
     // Tail
     Node* Tail = newNode;
+    cout << "Tail : " << Tail -> data << endl;
 
     insertAtHead( Head , 2 );
     insertAtHead( Head , 3 );
     insertAtHead( Head , 4 );
     insertAtHead( Head , 5 );
     
-    // display( Head );
+    display( Head );
 
     insertAtTail( Tail , 6 );
     insertAtTail( Tail , 7 );
@@ -147,14 +149,14 @@ int main(){
     insertAtTail( Tail , 9 );
     insertAtTail( Tail , 10 );
 
-    // display( Head );
+    display( Head );
 
     insertAtAnyPosition( Head , Tail , 1 , 100 );
     insertAtAnyPosition( Head , Tail , 1 , 200 );
     insertAtAnyPosition( Head , Tail , 1 , 300 );
     insertAtAnyPosition( Head , Tail , 1 , 400 );
 
-    // display( Head );
+    display( Head );
 
     insertAtAnyPosition( Head , Tail , 3 , 60 );
     insertAtAnyPosition( Head , Tail , 7 , 61 );
