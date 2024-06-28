@@ -12,7 +12,29 @@ using namespace std;
  * };
  */
 
-/*
+
+/* Approach : 1 
+
+class Solution {
+public:
+
+    ListNode* mid( ListNode* head ){
+
+        ListNode* slow = head;
+        ListNode* fast = head -> next;
+
+        while( fast != NULL && fast -> next != NULL ){
+            slow = slow -> next;
+            fast = fast -> next -> next;
+        }
+        return slow;
+
+    }
+};
+
+*/
+
+/* Approach : 2
 
 class Solution {
 public:
