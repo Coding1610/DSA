@@ -74,7 +74,7 @@ public:
 
         ListNode* temp1 = num1;
         ListNode* temp2 = num2;
-        ListNode* dummy = new ListNode();
+        ListNode* dummy = new ListNode(-1);
         ListNode* tail = dummy;
 
         while( temp1 != NULL || temp2 != NULL || c != 0 ){
