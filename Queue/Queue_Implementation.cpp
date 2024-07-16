@@ -39,10 +39,12 @@ class Queue{
     // Pop
     void pop(){
 
-        if( qfront == qrear ){
+        if( qfront == -1 ){
             cout << "Can't pop , Queue is empty." << endl;
-            qfront = qrear = -1;
             return;
+        }
+        if( qfront == qrear ){
+            qfront = qrear = -1;
         }
         int value = arr[qfront];
         qfront++;
