@@ -9,12 +9,11 @@ public:
     int newNumber( int num , vector<int> mp ){
 
         int i = 1;
+        int newNum = 0;
 
         if( num == 0 ){
             return mp[0];
         }
-
-        int newNum = 0;
 
         while( num ){
             int rem = num%10;
