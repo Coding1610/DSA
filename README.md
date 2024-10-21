@@ -1,5 +1,5 @@
 # DSA
 <br>
-Topic Wise Questions.POTD & Contest
+Topic Wise Questions,POTD & Contest
 <br>
 Platform : Leetcode 
