@@ -1,3 +1,5 @@
 # DSA
 <br>
-Topic Wise Questions , POTD & Contest Questions : Leetcode & Coding Ninjas
+Topic Wise Questions, POTD & Contest
+<br>
+Platform : Leetcode 
