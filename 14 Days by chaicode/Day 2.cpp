@@ -52,5 +52,6 @@ int main() {
 
     // please do not change the below code
     cout << mostCommonWord(document);
+    
     return 0;
 }
