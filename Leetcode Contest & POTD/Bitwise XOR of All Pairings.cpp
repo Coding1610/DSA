@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 public:
-    int xorAllNums(vector<int>& nums1, vector<int>& nums2){
+    int xorAllNums(vector<int>& nums1 , vector<int>& nums2){
 
         int x1 = 0;
         int x2 = 0;
